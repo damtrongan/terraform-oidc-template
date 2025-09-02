@@ -1,4 +1,4 @@
-# Deploy to AWS with Terraform Using GitHub Actions (Secure OIDC Setup)
+# Deploy to AWS resource with Terraform Using GitHub Actions (Secure OIDC Setup)
 
 ![Architecture Diagram](diagram)
 
@@ -83,14 +83,6 @@ Replace `<ACCOUNT_ID>`, `<OWNER>`, `<REPO>` below:
             "Resource": [
                 "arn:aws:s3:::andt-learning",
                 "arn:aws:s3:::andt-learning/*"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": "s3:*",
-            "Resource": [
-                "arn:aws:s3:::s3-full-access",
-                "arn:aws:s3:::s3-full-access/*"
             ]
         }
     ]
@@ -222,3 +214,4 @@ jobs:
 - **Built**: GitHub Actions workflow with OIDC authentication
 - **Stored**: Terraform state in secure, private S3
 - **Protected**: Your main branch with GitHub branch protection
+
