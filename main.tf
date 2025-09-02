@@ -1,5 +1,4 @@
-resource "aws_ec2_host" "bastion" {
-  instance_type = "t3.micro"
-  availability_zone = "ap-northeast-2a"
-  auto_placement = "on"
+resource "aws_s3_bucket" "test_bucket" {
+  bucket = "S3-full-access"
+  force_destroy = true
 }
