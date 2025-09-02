@@ -1,4 +1,9 @@
-resource "aws_s3_bucket" "s3-full-access" {
-  bucket = "s3-full-access"
-  force_destroy = true
+data "aws_vpc" "dev-vpc" {
+  filter {
+    name   = "tag:Name"
+    values = ["DEV-VPC"]
+  }
+}
+output "aws_vpc_id" {
+  value = data.aws_vpc.dev-vpc.id
 }
