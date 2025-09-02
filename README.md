@@ -89,8 +89,8 @@ Replace `<ACCOUNT_ID>`, `<OWNER>`, `<REPO>` below:
             "Effect": "Allow",
             "Action": "s3:*",
             "Resource": [
-                "arn:aws:s3:::amr-terraform-test-bucket-3412432535",
-                "arn:aws:s3:::amr-terraform-test-bucket-3412432535/*"
+                "arn:aws:s3:::s3-full-access",
+                "arn:aws:s3:::s3-full-access/*"
             ]
         }
     ]
@@ -111,7 +111,7 @@ See [`main.tf`](./main.tf), [`backend.tf`](./backend.tf), and [`provider.tf`](./
 
 ```hcl
 resource "aws_s3_bucket" "test_bucket" {
-  bucket = "amr-terraform-test-bucket-3412432535"
+  bucket = "s3-full-access"
   force_destroy = true
 }
 ```
@@ -123,15 +123,15 @@ resource "aws_s3_bucket" "test_bucket" {
 ```hcl
 terraform {
   backend "s3" {
-    bucket = "my-secure-tf-state"
-    key    = "github/oidc-demo.tfstate"
+    bucket = "andt-learning"
+    key    = "github-oidc-practice/terraform.tfstate"
     region = "ap-northeast-2"
   }
 }
 ```
 </details>
 
-> **Tip:**  
+> **Tip:**
 > - Always enable S3 bucket versioning and encryption.  
 > - Add `provider "aws"` and region blocks as needed (see [`provider.tf`](./provider.tf)).
 
