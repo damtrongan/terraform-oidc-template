@@ -20,7 +20,7 @@ output "aws_public_subnet_id" {
 }
 
 resource "aws_instance" "bastion" {
-  ami = "ami-0c55b159cbfafe1f0" # Amazon Linux 2 AMI (HVM), SSD Volume Type
+  ami = "ami-02eb96b4aa0940b85" # Amazon Linux 2 AMI (HVM), SSD Volume Type
   instance_type = "t2.micro"
   subnet_id     = data.aws_subnet.public_subnet.id
 
